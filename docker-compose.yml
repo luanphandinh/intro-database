@@ -1,18 +1,18 @@
 version: '3'
 
 services:
-  intro_db:
-    image: mariadb
-    restart: always
-    environment:
-      MYSQL_ROOT_PASSWORD: example_password
-      MYSQL_DATABASE: example_database
-      MYSQL_USER: example_user
-      MYSQL_PASSWORD: example_password
-    volumes:
-      - ./sql:/docker-entrypoint-initdb.d
-    ports:
-      - 3306:3306
+  # uncomment dong nay neu muon chay db without index
+  # intro_db: image: mariadb
+  #   restart: always
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: example_password
+  #     MYSQL_DATABASE: example_database
+  #     MYSQL_USER: example_user
+  #     MYSQL_PASSWORD: example_password
+  #   volumes:
+  #     - ./sql:/docker-entrypoint-initdb.d
+  #   ports:
+  #     - 3306:3306
   intro_db_index:
     image: mariadb
     restart: always
@@ -25,4 +25,8 @@ services:
       - ./sql-withindex:/docker-entrypoint-initdb.d
     ports:
       - 3307:3306
-
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8080:8080"
