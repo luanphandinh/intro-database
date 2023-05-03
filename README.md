@@ -22,7 +22,16 @@ docker-compose up
 
 
 # Connect to DB
+### Command line terminal
 ```
 sudo apt install mysql-client
-sudo mysql -h 127.0.0.1 -P 3306 -u root -pexample_password
+sudo mysql -h 127.0.0.1 -P 3307 -u root -pexample_password
+```
+
+### Adminer page
+Go to http://localhost:8080
+```
+Server: intro_db_index
+Username: root
+Passoword: example_password
 ```
