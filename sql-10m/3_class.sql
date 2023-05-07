@@ -1,0 +1,4 @@
+CREATE TABLE IF NOT EXISTS school.class (
+    id INT PRIMARY KEY AUTO_INCREMENT,
+    class_name VARCHAR(50)
+);
