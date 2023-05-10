@@ -25,13 +25,38 @@ docker-compose up
 ### Command line terminal
 ```
 sudo apt install mysql-client
-sudo mysql -h 127.0.0.1 -P 3307 -u root -pexample_password
 ```
 
-### Adminer page
+without index
+```
+sudo mysql -h 127.0.0.1 -P 3308 -u root -proot
+```
+
+with index
+```
+sudo mysql -h 127.0.0.1 -P 3309 -u root -proot
+```
+
+### Adminer page without index
 Go to http://localhost:8080
 ```
-Server: intro_db_index
+Server: intro_db_10m
 Username: root
-Passoword: example_password
+Passoword: root
+```
+
+### Adminer page with index
+Go to http://localhost:8080
+```
+Server: intro_db_index_10m
+Username: root
+Passoword: root
+```
+
+
+### Clean up
+```
+docker ps -a | grep "intro_db" | cut -d' ' -f1 | xargs docker stop
+docker ps -a | grep "intro_db" | cut -d' ' -f1 | xargs docker rm
+docker volume prune
 ```
