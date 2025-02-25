@@ -29,7 +29,7 @@ sudo mysql -h 127.0.0.1 -P 3307 -u root -pexample_password
 ```
 
 ### Adminer page
-Go to http://localhost:8080
+Go to http://localhost:9091
 ```
 Server: intro_db_index
 Username: root
