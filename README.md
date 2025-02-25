@@ -46,7 +46,7 @@ Passoword: root
 ```
 
 ### Adminer page with index
-Go to http://localhost:8080
+Go to http://localhost:9091
 ```
 Server: intro_db_index_10m
 Username: root
