@@ -38,7 +38,7 @@ sudo mysql -h 127.0.0.1 -P 3309 -u root -proot
 ```
 
 ### Adminer page without index
-Go to http://localhost:8080
+Go to http://localhost:9091
 ```
 Server: intro_db_10m
 Username: root
