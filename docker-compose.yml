@@ -1,7 +1,7 @@
 version: '3'
 
 services:
-  intro_db_10m:
+  intro_db:
     image: mariadb
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -9,20 +9,32 @@ services:
       MYSQL_USER: example_user
       MYSQL_PASSWORD: example_password
     volumes:
-      - ./sql-10m:/docker-entrypoint-initdb.d
+      - ./sql:/docker-entrypoint-initdb.d
+      - ./sql/my.cnf:/etc/mysql/my.cnf
     ports:
-      - 3308:3306
-  intro_db_index_10m:
-    image: mariadb
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: example_database
-      MYSQL_USER: example_user
-      MYSQL_PASSWORD: example_password
-    volumes:
-      - ./sql-withindex-10m:/docker-entrypoint-initdb.d
-    ports:
-      - 3309:3306
+      - 3306:3306
+  # intro_db_10m:
+  #   image: mariadb
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: root
+  #     MYSQL_DATABASE: example_database
+  #     MYSQL_USER: example_user
+  #     MYSQL_PASSWORD: example_password
+  #   volumes:
+  #     - ./sql-10m:/docker-entrypoint-initdb.d
+  #   ports:
+  #     - 3308:3306
+  # intro_db_index_10m:
+  #   image: mariadb
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: root
+  #     MYSQL_DATABASE: example_database
+  #     MYSQL_USER: example_user
+  #     MYSQL_PASSWORD: example_password
+  #   volumes:
+  #     - ./sql-withindex-10m:/docker-entrypoint-initdb.d
+  #   ports:
+  #     - 3309:3306
   adminer:
     image: adminer
     ports:
