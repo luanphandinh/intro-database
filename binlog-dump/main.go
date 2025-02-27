@@ -32,6 +32,10 @@ func (h *DatabaseEventHander) OnRow(e *canal.RowsEvent) error {
 		err            error
 	)
 
+	if len(e.Rows) <= 0 {
+		return fmt.Errorf("unexpected len of rows, should have more than 0 row")
+	}
+
 	switch e.Action {
 	case canal.InsertAction:
 		newRow, err = parseRow(e.Rows[0], e.Table.Columns)
