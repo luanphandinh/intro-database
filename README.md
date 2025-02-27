@@ -27,28 +27,28 @@ docker-compose up
 sudo apt install mysql-client
 ```
 
-without index
+master db
 ```
-sudo mysql -h 127.0.0.1 -P 3308 -u root -proot
-```
-
-with index
-```
-sudo mysql -h 127.0.0.1 -P 3309 -u root -proot
+sudo mysql -h 127.0.0.1 -P 3306 -u root -proot
 ```
 
-### Adminer page without index
+slave db
+```
+sudo mysql -h 127.0.0.1 -P 3307 -u root -proot
+```
+
+### Adminer page master db
 Go to http://localhost:9091
 ```
-Server: intro_db_10m
+Server: intro_db_master
 Username: root
 Passoword: root
 ```
 
-### Adminer page with index
+### Adminer page slave db
 Go to http://localhost:9091
 ```
-Server: intro_db_index_10m
+Server: intro_db_slave
 Username: root
 Passoword: root
 ```
