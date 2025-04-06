@@ -17,7 +17,7 @@ https://docs.docker.com/desktop/windows/wsl/
 
 # Start up docker
 ```
-docker-compose up
+docker compose up
 ```
 
 
@@ -56,7 +56,6 @@ Passoword: root
 
 ### Clean up
 ```
-docker ps -a | grep "intro_db" | cut -d' ' -f1 | xargs docker stop
-docker ps -a | grep "intro_db" | cut -d' ' -f1 | xargs docker rm
+docker compose down
 docker volume prune
 ```
