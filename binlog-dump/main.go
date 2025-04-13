@@ -13,7 +13,7 @@ type DatabaseEventHander struct {
 	canal.DummyEventHandler
 }
 
-func parseRow(raw []interface{}, cols []schema.TableColumn) (map[string]interface{}, error) {
+func parseRow(raw []any, cols []schema.TableColumn) (map[string]interface{}, error) {
 	if len(raw) != len(cols) {
 		return nil, fmt.Errorf("unexpected error, raw data size and cols size should match")
 	}
@@ -28,7 +28,7 @@ func parseRow(raw []interface{}, cols []schema.TableColumn) (map[string]interfac
 
 func (h *DatabaseEventHander) OnRow(e *canal.RowsEvent) error {
 	var (
-		oldRow, newRow map[string]interface{}
+		oldRow, newRow map[string]any
 		err            error
 	)
 
