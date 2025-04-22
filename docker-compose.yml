@@ -1,17 +1,17 @@
 version: '3'
 
 services:
-  intro_db:
-    image: mariadb
-    environment:
-      MYSQL_ROOT_PASSWORD: root
-      MYSQL_DATABASE: example_database
-      MYSQL_USER: example_user
-      MYSQL_PASSWORD: example_password
-    volumes:
-      - ./sql:/docker-entrypoint-initdb.d
-    ports:
-      - 3308:3306
+  # intro_db:
+  #   image: mariadb
+  #   environment:
+  #     MYSQL_ROOT_PASSWORD: root
+  #     MYSQL_DATABASE: example_database
+  #     MYSQL_USER: example_user
+  #     MYSQL_PASSWORD: example_password
+  #   volumes:
+  #     - ./sql:/docker-entrypoint-initdb.d
+  #   ports:
+  #     - 3308:3306
   intro_db_index:
     image: mariadb
     environment:
