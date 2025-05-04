@@ -17,7 +17,7 @@ https://docs.docker.com/desktop/windows/wsl/
 
 # Start up docker
 ```
-docker-compose up
+docker compose up
 ```
 
 
